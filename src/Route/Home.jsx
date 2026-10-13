@@ -5,13 +5,6 @@ import { carImageUrl } from "../imageUrl";
 
 const heroPhotoId = "1704226840161-5718a7894bf0";
 
-const quickActionPhotoIds = {
-  search: "1603189661342-e45f1374f890",
-  testDrive: "1696294586764-6baffd088b71",
-  contact: "1731988666894-482242ceae2f",
-  compare: "1574761489603-c6c98152de56",
-};
-
 const featuredModels = [
   {
     category: "suvs",
@@ -58,10 +51,7 @@ export default function Home() {
       </div>
 
       <div className="quick-actions">
-        <div
-          className="quick-action-card quick-action-card-photo"
-          style={{ backgroundImage: `url(${carImageUrl(quickActionPhotoIds.search, 600)})` }}
-        >
+        <div className="quick-action-card quick-action-card-photo">
           <svg className="quick-action-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
             <circle cx="11" cy="11" r="7" stroke="currentColor" strokeWidth="2" />
             <line x1="21" y1="21" x2="16.65" y2="16.65" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
@@ -71,10 +61,7 @@ export default function Home() {
             Search now
           </Link>
         </div>
-        <div
-          className="quick-action-card quick-action-card-photo"
-          style={{ backgroundImage: `url(${carImageUrl(quickActionPhotoIds.testDrive, 600)})` }}
-        >
+        <div className="quick-action-card quick-action-card-photo">
           <svg className="quick-action-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
             <rect x="3" y="10" width="18" height="8" rx="2" stroke="currentColor" strokeWidth="2" />
             <path d="M5 10l1.8-4.5A2 2 0 0 1 8.65 4h6.7a2 2 0 0 1 1.85 1.5L19 10" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
@@ -86,10 +73,7 @@ export default function Home() {
             Request a test drive
           </Link>
         </div>
-        <div
-          className="quick-action-card quick-action-card-photo"
-          style={{ backgroundImage: `url(${carImageUrl(quickActionPhotoIds.contact, 600)})` }}
-        >
+        <div className="quick-action-card quick-action-card-photo">
           <svg className="quick-action-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
             <path
               d="M4 5h16v11H8l-4 4V5z"
@@ -103,10 +87,7 @@ export default function Home() {
             Get in touch
           </Link>
         </div>
-        <div
-          className="quick-action-card quick-action-card-photo"
-          style={{ backgroundImage: `url(${carImageUrl(quickActionPhotoIds.compare, 600)})` }}
-        >
+        <div className="quick-action-card quick-action-card-photo">
           <svg className="quick-action-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
             <path d="M8 3v18M16 3v18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
             <path d="M4 8l-2 2 2 2M20 8l2 2-2 2M12 6l-2 2 2 2M12 14l2 2-2 2" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
