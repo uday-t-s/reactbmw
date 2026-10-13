@@ -12,6 +12,9 @@
   --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.35);
   --shadow-md: 0 10px 30px rgba(0, 0, 0, 0.5);
   --radius: 6px;
+  --header-start: var(--navy);
+  --header-end: var(--navy-light);
+  --header-text: #fff;
 }
 
 [data-theme="light"] {
@@ -22,6 +25,9 @@
   --text-muted: #6b6250;
   --shadow-sm: 0 2px 8px rgba(43, 36, 22, 0.08);
   --shadow-md: 0 10px 30px rgba(43, 36, 22, 0.12);
+  --header-start: #fbf8f0;
+  --header-end: #f6f1e6;
+  --header-text: #2b2416;
 }
 
 * {

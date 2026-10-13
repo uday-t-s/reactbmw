@@ -25,7 +25,7 @@ export const ThemeContext = createContext();
 
 export default function App() {
   const [garage, setGarage] = useState([]);
-  const [theme, setTheme] = useState("dark");
+  const [theme, setTheme] = useState("light");
 
   const toggleGarage = (id) => {
     setGarage((garage) => {

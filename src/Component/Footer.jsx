@@ -33,10 +33,6 @@ export default function Footer() {
           <Link to="/models/m-series">M Series</Link>
         </div>
       </div>
-
-      <p className="footer-note">
-        Student training project - not an official BMW website.
-      </p>
     </footer>
   );
 }
