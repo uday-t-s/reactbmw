@@ -26,9 +26,6 @@ export default function Insights() {
   const sortedByQty = [...carsData].sort((a, b) => b.qtySold - a.qtySold);
   const topModel = sortedByQty[0];
 
-  const totalRevenue = carsData.reduce((sum, car) => sum + car.price * car.qtySold, 0);
-  const averagePrice = carsData.reduce((sum, car) => sum + car.price, 0) / carsData.length;
-
   return (
     <div>
       <h2>Showroom insights</h2>
@@ -42,20 +39,6 @@ export default function Insights() {
         <div className="insights-spotlight-info">
           <h3>BMW {topModel.name}</h3>
           <p className="hint-text">Best selling model this year</p>
-          <div className="insights-stats">
-            <div>
-              <h2>{topModel.qtySold}</h2>
-              <p>units sold</p>
-            </div>
-            <div>
-              <h2>{formatInr(Math.round(averagePrice))}</h2>
-              <p>average price</p>
-            </div>
-            <div>
-              <h2>{formatInr(totalRevenue)}</h2>
-              <p>total revenue</p>
-            </div>
-          </div>
           <Link className="btn" to={`/models/${topModel.category}/${topModel.id}`}>
             View {topModel.name}
           </Link>
