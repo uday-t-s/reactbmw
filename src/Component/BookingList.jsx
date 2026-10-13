@@ -13,11 +13,9 @@ export default function BookingList() {
       <h3>Your bookings</h3>
       {booking.map((item) => (
         <div className="booking-item" key={item.id}>
-          <strong>
-            {item.firstName} {item.lastName}
-          </strong>{" "}
-          booked a <strong>{item.model}</strong> test drive on {item.date} ·{" "}
-          {item.phone} · prefers {item.contactMethod}
+          <strong>{item.firstName}</strong> booked a <strong>{item.model}</strong> test
+          drive at {item.branch} on {item.date} · {item.phone} · prefers{" "}
+          {item.contactMethod}
         </div>
       ))}
     </div>

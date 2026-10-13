@@ -4,10 +4,10 @@ import { addBooking } from "../Slice/bookingSlice";
 
 export default function BookingForm() {
   const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [model, setModel] = useState("");
+  const [branch, setBranch] = useState("");
   const [date, setDate] = useState("");
   const [contactMethod, setContactMethod] = useState("Email");
   const [formError, setFormError] = useState("");
@@ -16,7 +16,7 @@ export default function BookingForm() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!firstName || !lastName || !email || !phone || !model || !date) {
+    if (!firstName || !email || !phone || !model || !branch || !date) {
       setFormError("Please fill all the fields.");
       return;
     }
@@ -24,20 +24,20 @@ export default function BookingForm() {
     dispatch(
       addBooking({
         firstName,
-        lastName,
         email,
         phone,
         model,
+        branch,
         date,
         contactMethod,
         id: Date.now(),
       }),
     );
     setFirstName("");
-    setLastName("");
     setEmail("");
     setPhone("");
     setModel("");
+    setBranch("");
     setDate("");
     setContactMethod("Email");
     firstNameRef.current.focus();
@@ -53,13 +53,6 @@ export default function BookingForm() {
         ref={firstNameRef}
         value={firstName}
         onChange={(e) => setFirstName(e.target.value)}
-      />
-      <label htmlFor="lastName">Last name</label>
-      <input
-        id="lastName"
-        type="text"
-        value={lastName}
-        onChange={(e) => setLastName(e.target.value)}
       />
       <label htmlFor="email">Email address</label>
       <input
@@ -85,6 +78,14 @@ export default function BookingForm() {
         <option value="X5">X5</option>
         <option value="M3">M3</option>
         <option value="M5">M5</option>
+      </select>
+      <label htmlFor="branch">Branch</label>
+      <select id="branch" value={branch} onChange={(e) => setBranch(e.target.value)}>
+        <option value="">Select a branch</option>
+        <option value="MG Road">MG Road</option>
+        <option value="Koramangala">Koramangala</option>
+        <option value="Indiranagar">Indiranagar</option>
+        <option value="Whitefield">Whitefield</option>
       </select>
       <label htmlFor="date">Preferred date</label>
       <input id="date" type="date" value={date} onChange={(e) => setDate(e.target.value)} />

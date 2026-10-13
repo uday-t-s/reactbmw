@@ -81,12 +81,10 @@
 .theme-toggle {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  font-size: 0.75rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.6px;
-  padding: 7px 14px;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  padding: 0;
   border: 1px solid rgba(255, 255, 255, 0.3);
   background-color: transparent;
   color: #fff;
@@ -96,8 +94,8 @@
 }
 
 .theme-toggle svg {
-  width: 15px;
-  height: 15px;
+  width: 17px;
+  height: 17px;
   flex-shrink: 0;
 }
 
@@ -254,7 +252,7 @@
 /* quick actions row */
 .quick-actions {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 20px;
   margin-bottom: 56px;
 }
@@ -277,10 +275,48 @@
   box-shadow: var(--shadow-md);
 }
 
+.quick-action-card-photo {
+  position: relative;
+  overflow: hidden;
+  background-color: var(--navy);
+  background-size: cover;
+  background-position: center;
+  border-color: transparent;
+}
+
+.quick-action-card-photo::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(7, 15, 30, 0.75) 0%, rgba(7, 15, 30, 0.88) 100%);
+}
+
+.quick-action-card-photo > * {
+  position: relative;
+  z-index: 1;
+}
+
+.quick-action-card-photo:hover {
+  border-color: var(--blue);
+}
+
+.quick-action-card-photo .quick-actions-title {
+  color: #fff;
+}
+
+.quick-action-card-photo .quick-action-icon {
+  color: var(--blue-light);
+  background-color: rgba(255, 255, 255, 0.12);
+}
+
 .quick-action-icon {
   width: 36px;
   height: 36px;
+  padding: 10px;
+  box-sizing: content-box;
   color: var(--blue);
+  background-color: rgba(59, 116, 255, 0.12);
+  border-radius: 50%;
   margin-bottom: 16px;
 }
 
@@ -1240,10 +1276,19 @@
     gap: 6px;
   }
 
-  .theme-toggle,
   .garage-count {
     font-size: 0.65rem;
     padding: 6px 8px;
+  }
+
+  .theme-toggle {
+    width: 30px;
+    height: 30px;
+  }
+
+  .theme-toggle svg {
+    width: 15px;
+    height: 15px;
   }
 
   .nav-links {
@@ -1264,6 +1309,25 @@
   .nav-links a {
     flex-shrink: 0;
     font-size: 0.88rem;
+  }
+
+  .home-stats {
+    flex-wrap: nowrap;
+    gap: 8px;
+  }
+
+  .home-stats > div {
+    min-width: 0;
+    flex: 1;
+    padding: 14px 8px;
+  }
+
+  .home-stats h2 {
+    font-size: 1.3rem;
+  }
+
+  .home-stats p {
+    font-size: 0.7rem;
   }
 
   .hero {
