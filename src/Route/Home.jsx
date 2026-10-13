@@ -100,18 +100,17 @@ export default function Home() {
       </div>
 
       {featuredModels.map((car) => (
-        <div
-          className={`feature-promo cat-${car.category}`}
-          style={{ backgroundImage: `url(${carImageUrl(car.photoId, 1400)})` }}
-          key={car.id}
-        >
+        <div className="feature-promo" key={car.id}>
+          <div className="feature-promo-media">
+            <img src={carImageUrl(car.photoId, 900)} alt={`BMW ${car.name}`} />
+          </div>
           <div className="feature-promo-text">
             <p className="eyebrow">{car.tagline}</p>
             <h2>BMW {car.name}</h2>
             <p>{car.note}</p>
             <p className="feature-promo-price">Price starting at {car.price}*</p>
-            <Link className="btn btn-light" to={`/models/${car.category}/${car.id}`}>
-              Know more
+            <Link className="feature-promo-link" to={`/models/${car.category}/${car.id}`}>
+              Know more <span aria-hidden="true">›</span>
             </Link>
           </div>
         </div>
